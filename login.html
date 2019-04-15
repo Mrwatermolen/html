@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#login_button").click(function(){
+      var $user_name=$("#UserName").val();
+      var $passward=$("#Passward").val();
+      if($user_name.length != 0 && $passward.length !=0)
+      {
+        $.ajax({
+          url:"testpost.py",
+          type:"POST",
+          dataType:"json",
+          success:function (date) {
+            console.log(data)
+          }
+        })
+      }
+      else {
+        alert("Name or Passward cann't be empty!")
+      }
+    });
+  });
+</script>
+<body>
+<h1>Login in</h1>
+<table>
+  <tr>
+    <td>UserNmae:</td>
+    <td><input type="text" id="UserName"  placeholder="Write your name"/></td>
+  </tr>
+  <tr>
+    <td>Passward</td>
+    <td><input type="text" id="Passward"/></td>
+  </tr>
+</table>
+<button id="login_button">Login in</button>
+<div id="myDiv">
+
+</div>
+</body>
+</html>
