@@ -9,23 +9,52 @@
   $(document).ready(function(){
     $("#login_button").click(function(){
       var $user_name=$("#UserName").val();
-      var $passward=$("#Passward").val();
-      if($user_name.length != 0 && $passward.length !=0)
+      var $password=$("#Password").val();
+      if($user_name.length != 0 && $password.length !=0)
       {
-        $.ajax({
+        /*$.ajax({
           url:"testpost.py",
           type:"POST",
           dataType:"json",
           success:function (date) {
             console.log(data)
           }
-        })
+        })*/
+
+        $.ajax(
+          {
+            url:"testpost.py",
+            type:"POST",
+            UserName:$user_name,
+            Password:$password,
+            dataType:"JOSN",
+            async: true,
+            success:function (date) {
+              if(date.succ) {
+                var search_url =encodeURI("index.html?&"+date.name)
+                window.location.href = search_url;
+              }
+              else
+                $("#ErrorMessage").text("Something is wrong!");
+
+            }
+          }
+        )
       }
       else {
-        alert("Name or Passward cann't be empty!")
+        alert("Name or Password cann't be empty!")
       }
     });
+
+    $("#LookPassword").click(function () {
+      var $judge = $("#Password").attr("type");
+      if($judge == "text")
+        $("#Password").attr("type","password");
+      else
+        $("#Password").attr("type","text");
+    })
   });
+
 </script>
 <body>
 <h1>Login in</h1>
@@ -35,11 +64,11 @@
     <td><input type="text" id="UserName"  placeholder="Write your name"/></td>
   </tr>
   <tr>
-    <td>Passward</td>
-    <td><input type="text" id="Passward"/></td>
+    <td>Password</td>
+    <td><input type="password" id="Password"/><button id="LookPassword"></button></td>
   </tr>
 </table>
-<button id="login_button">Login in</button>
+<button id="login_button">Login in<p id="ErrorMessage"></p></button>
 <div id="myDiv">
 
 </div>

@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <link rel="stylesheet" type="text/css" href="src/css/main.css"/>
+  <head>
     <meta charset="UTF-8">
-    <title>This is a example</title>
-</head>
-<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>T</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}"/>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <script>
+    $(document).ready(function () {
+      var $search_url = window.location.href;
+      var $qs = $search_url.split("&");
+      if(qs){
+        $("#ul1").remove();
+        var $text = $(<p></p>).text($qs);
+        $(#header).append($text);
+      }
+    })
+  </script>
 <body>
 <div id="header">
   <p>Blog</p>
-  <ul>
+  <ul id="ul1">
     <li><a href="login.html" title="if you have not had a account,you can not use it"><button>Login in</button></a></li>
     <li><a href="register.html" title="click it and creat a new account"><button>Sign up</button></a></li>
   </ul>
@@ -23,6 +35,6 @@
     <li>D</li>
   </ul>
 </div>
-<div id="main">
+<div id="main"></div>
 </body>
 </html>
