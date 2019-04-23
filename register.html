@@ -1,24 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Register</title>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}"/>
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<script>
+  $(document).ready(function () {
+    $("#submit").click(function () {
+      var $Username=$("#username").val();
+      var $Password=$("#password").val();
+      var $ConfirmPassword=$("#confirm_password").val();
+      var $Email=$("#mail").val();
+      if($Username.length!=0||$Password.length!=0||$ConfirmPassword.length!=0||$Email.length!=0)
+      {
+        $.ajax(
+          {
+            url:"testpost.py",
+            type:"POST",
+            Username:$Username,
+            Password:$Password,
+            ConfirmPassword:$ConfirmPassword,
+            Email:$Email,
+            dataType:"JSON",
+            async: true,
+            success:function (date) {
+              var search_url =encodeURI("index?&name="+date.name);
+              window.location.href = search_url;
+            },
+            error(t,n){
+              alert(t+"-type-"+n);
+            }
+          }
+        )
+      }
+      else {
+        alert("cann't be empty!");
+      }
+
+    })
+  })
+</script>
 <body>
-<h1>Register</h1>
-<table>
-  <tr>
-    <td>UserNmae:</td>
-    <td><input type="text"/></td>
-  </tr>
-  <tr>
-    <td>Passward</td>
-    <td><input type="text"/></td>
-  </tr>
-  <tr>
-    <td>Correct Passward Again</td>
-    <td><input type="text"/></td>
-  </tr>
-</table>
+<div class="container">
+  <h1 style="text-align: center">Register</h1>
+  <div class="row col-sm-offset-4">
+      <form role="form" class="form-horizontal">
+        <div class="form-group">
+          <label for="username" class="col-xs-1 col-sm-1	col-md-1 control-label">Nmae</label>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <input id="username" type="text" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="col-xs-1 col-sm-1	col-md-1 control-label">Password</label>
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <input type="password" id="password" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm_password" class="col-xs-1 col-sm-1	col-md-1 control-label">Confirm Password</label>
+          <div class="col-xs-3 col-sm-3	col-md-3">
+            <input id="confirm_password" type="password" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="mail"class="col-xs-1 col-sm-1	col-md-1 control-label">E-mail</label>
+          <div class="col-xs-3 col-sm-3	col-md-3">
+            <input id="mail" type="text" class="form-control">
+          </div>
+        </div>
+<!--
+        <div class="form-group">
+          <div class="form-inline col-xs-3 col-sm-3	col-md-3">
+            <label>Sex</label>
+            <label class="radio-inline">M</label>
+            <input type="radio" class="form-control">
+            <label class="radio-inline">W</label>
+            <input type="radio" class="form-control">
+            <label class="radio-inline">Secert</label>
+            <input type="radio" class="form-control">
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="col-xs-1 col-sm-1	col-md-1 control-label">Date of Birth</label>
+          <div class="col-xs-3 col-sm-3	col-md-3">
+            <input type="date" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-xs-1 col-sm-1	col-md-1 control-label">Address</label>
+          <div class="col-xs-3 col-sm-3	col-md-3">
+            <select class="form-control">
+              <option>A</option>
+              <option>A</option>
+              <option>A</option>
+              <option>A</option>
+              <option>A</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-xs-1 col-sm-1	col-md-1 control-label">Server Item</label>
+          <div class="col-xs-3 col-sm-3	col-md-3">
+            <input type="checkbox" class="form-control">
+            <p class="form-control-static">Yes,I agreed</p>
+          </div>
+        </div>
+-->
+        <div class="col-xs-3 col-sm-3	col-md-3">
+          <button type="button" id="submit" class="form-control btn-info">Registe</button>
+        </div>
+      </form>
+  </div>
+</div>
+
+
 </body>
 </html>
