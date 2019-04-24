@@ -17,20 +17,18 @@
 <script>
   $(document).ready(function () {
     $("#submit").click(function () {
-      var $Username=$("#username").val();
-      var $Password=$("#password").val();
-      var $ConfirmPassword=$("#confirm_password").val();
-      var $Email=$("#mail").val();
-      if($Username.length!=0||$Password.length!=0||$ConfirmPassword.length!=0||$Email.length!=0)
-      {
+      var FormDate={
+          Username:$("#username").val(),
+          Password:$("#password").val(),
+          ConfirmPassword:$("#confirm_password").val(),
+          Email:$("#mail").val(),
+      };
+
         $.ajax(
           {
             url:"test_post/nn",
             type:"POST",
-            Username:$Username,
-            Password:$Password,
-            ConfirmPassword:$ConfirmPassword,
-            Email:$Email,
+            data:FormDate,
             dataType:"JSON",
             async: true,
             success:function (date) {
@@ -42,11 +40,6 @@
             }
           }
         )
-      }
-      else {
-        alert("cann't be empty!");
-      }
-
     })
   })
 </script>
