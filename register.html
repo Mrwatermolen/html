@@ -13,84 +13,91 @@
   <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .col-conter{
+      float: none;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 </head>
 <body>
-  <h1 style="text-align: center">Register</h1>
-  <form role="form" class="form-horizontal" method="post">
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-conter">
+      <h1>Register</h1>
+      <form role="form" class="form-horizontal" method="post">
         <div class="form-group">
-          <label class="col-xs-1 col-sm-1	col-md-1 control-label">Nmae</label>
-          <div class="col-xs-3 col-sm-3 col-md-3">
-            <input name="Ssername" type="text" class="form-control">
-          </div>
+          <label class="control-label">Nmae</label>
+          <input name="Ssername" type="text" class="form-control"required autofocus>
         </div>
 
         <div class="form-group">
-          <label class="col-xs-1 col-sm-1	col-md-1 control-label">Password</label>
-          <div class="col-xs-3 col-sm-3 col-md-3">
-            <input type="password" name="Password" class="form-control">
-          </div>
+          <label class="control-label">Password</label>
+          <input type="password" name="Password" class="form-control" required>
         </div>
 
         <div class="form-group">
-          <label class="col-xs-1 col-sm-1	col-md-1 control-label">Confirm Password</label>
-          <div class="col-xs-3 col-sm-3	col-md-3">
-            <input name="Confirm_password" type="password" class="form-control">
-          </div>
+          <label class="control-label">Confirm Password</label>
+          <input name="Confirm_password" type="password" class="form-control" required>
         </div>
 
         <div class="form-group">
-          <label class="col-xs-1 col-sm-1	col-md-1 control-label">E-mail</label>
-          <div class="col-xs-3 col-sm-3	col-md-3">
-            <input name="Mail" type="text" class="form-control">
-          </div>
+          <label class="control-label">E-mail</label>
+          <input name="Mail" type="text" class="form-control" required>
         </div>
-<!--
-        <div class="form-group">
-          <div class="form-inline col-xs-3 col-sm-3	col-md-3">
-            <label>Sex</label>
-            <label class="radio-inline">M</label>
-            <input type="radio" class="form-control">
-            <label class="radio-inline">W</label>
-            <input type="radio" class="form-control">
-            <label class="radio-inline">Secert</label>
-            <input type="radio" class="form-control">
-          </div>
-        </div>
+        <!--
+                <div class="form-group">
+                  <div class="form-inline col-xs-3 col-sm-3	col-md-3">
+                    <label>Sex</label>
+                    <label class="radio-inline">M</label>
+                    <input type="radio" class="form-control">
+                    <label class="radio-inline">W</label>
+                    <input type="radio" class="form-control">
+                    <label class="radio-inline">Secert</label>
+                    <input type="radio" class="form-control">
+                  </div>
+                </div>
 
 
-        <div class="form-group">
-          <label class="col-xs-1 col-sm-1	col-md-1 control-label">Date of Birth</label>
-          <div class="col-xs-3 col-sm-3	col-md-3">
-            <input type="date" class="form-control">
-          </div>
-        </div>
+                <div class="form-group">
+                  <label class="col-xs-1 col-sm-1	col-md-1 control-label">Date of Birth</label>
+                  <div class="col-xs-3 col-sm-3	col-md-3">
+                    <input type="date" class="form-control">
+                  </div>
+                </div>
 
-        <div class="form-group">
-          <label class="col-xs-1 col-sm-1	col-md-1 control-label">Address</label>
-          <div class="col-xs-3 col-sm-3	col-md-3">
-            <select class="form-control">
-              <option>A</option>
-              <option>A</option>
-              <option>A</option>
-              <option>A</option>
-              <option>A</option>
-            </select>
-          </div>
-        </div>
+                <div class="form-group">
+                  <label class="col-xs-1 col-sm-1	col-md-1 control-label">Address</label>
+                  <div class="col-xs-3 col-sm-3	col-md-3">
+                    <select class="form-control">
+                      <option>A</option>
+                      <option>A</option>
+                      <option>A</option>
+                      <option>A</option>
+                      <option>A</option>
+                    </select>
+                  </div>
+                </div>
 
-        <div class="form-group">
-          <label class="col-xs-1 col-sm-1	col-md-1 control-label">Server Item</label>
-          <div class="col-xs-3 col-sm-3	col-md-3">
-            <input type="checkbox" class="form-control">
-            <p class="form-control-static">Yes,I agreed</p>
-          </div>
-        </div>
--->
-        <div class="col-xs-2 col-sm-2	col-md-2 col-sm-offset-1">
-          <input type="submit" class="form-control" value="Registe">
-        </div>
+                <div class="form-group">
+                  <label class="col-xs-1 col-sm-1	col-md-1 control-label">Server Item</label>
+                  <div class="col-xs-3 col-sm-3	col-md-3">
+                    <input type="checkbox" class="form-control">
+                    <p class="form-control-static">Yes,I agreed</p>
+                  </div>
+                </div>
+        -->
+        <input type="submit" class="form-control" value="Registe">
       </form>
+    </div>
 
+  </div>
+
+</div>
 
 </body>
 </html>
