@@ -14,65 +14,34 @@
   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<script>
-  $(document).ready(function () {
-    $("#submit").click(function () {
-      var FormDate={
-          Username:$("#username").val(),
-          Password:$("#password").val(),
-          ConfirmPassword:$("#confirm_password").val(),
-          Email:$("#mail").val(),
-      };
-
-        $.ajax(
-          {
-            url:"test_post/nn",
-            type:"POST",
-            data:FormDate,
-            dataType:"JSON",
-            async: true,
-            success:function (date) {
-              var search_url =encodeURI("index?&name="+date.name);
-              window.location.href = search_url;
-            },
-            error(t,n){
-              alert(t+"-type-"+n);
-            }
-          }
-        )
-    })
-  })
-</script>
 <body>
-<div class="container">
   <h1 style="text-align: center">Register</h1>
-  <div class="row col-sm-offset-4">
-      <form role="form" class="form-horizontal">
+  <form role="form" class="form-horizontal" method="post">
         <div class="form-group">
-          <label for="username" class="col-xs-1 col-sm-1	col-md-1 control-label">Nmae</label>
+          <label class="col-xs-1 col-sm-1	col-md-1 control-label">Nmae</label>
           <div class="col-xs-3 col-sm-3 col-md-3">
-            <input id="username" type="text" class="form-control">
+            <input name="Ssername" type="text" class="form-control">
           </div>
         </div>
 
         <div class="form-group">
-          <label for="password" class="col-xs-1 col-sm-1	col-md-1 control-label">Password</label>
+          <label class="col-xs-1 col-sm-1	col-md-1 control-label">Password</label>
           <div class="col-xs-3 col-sm-3 col-md-3">
-            <input type="password" id="password" class="form-control">
+            <input type="password" name="Password" class="form-control">
           </div>
         </div>
 
         <div class="form-group">
-          <label for="confirm_password" class="col-xs-1 col-sm-1	col-md-1 control-label">Confirm Password</label>
+          <label class="col-xs-1 col-sm-1	col-md-1 control-label">Confirm Password</label>
           <div class="col-xs-3 col-sm-3	col-md-3">
-            <input id="confirm_password" type="password" class="form-control">
+            <input name="Confirm_password" type="password" class="form-control">
           </div>
         </div>
 
         <div class="form-group">
-          <label for="mail"class="col-xs-1 col-sm-1	col-md-1 control-label">E-mail</label>
+          <label class="col-xs-1 col-sm-1	col-md-1 control-label">E-mail</label>
           <div class="col-xs-3 col-sm-3	col-md-3">
-            <input id="mail" type="text" class="form-control">
+            <input name="Mail" type="text" class="form-control">
           </div>
         </div>
 <!--
@@ -117,12 +86,10 @@
           </div>
         </div>
 -->
-        <div class="col-xs-3 col-sm-3	col-md-3">
-          <button type="button" id="submit" class="form-control btn-info">Registe</button>
+        <div class="col-xs-2 col-sm-2	col-md-2 col-sm-offset-1">
+          <input type="submit" class="form-control" value="Registe">
         </div>
       </form>
-  </div>
-</div>
 
 
 </body>
