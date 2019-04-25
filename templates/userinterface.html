@@ -9,6 +9,8 @@
     <meta charset="UTF-8">
     <title>Userunterface</title>
 </head>
+<body>
+
 <div class="container">
   <div class="row">
     <nav class="navbar navbar-default" role="navigation">
@@ -34,16 +36,32 @@
               </ul>
             </div>
           </li>
-          <li><img src="../static/images/timg.jpg" class="img-responsive img-rounded img-circle"></li>
+          <li><img src="static/images/timg.jpg" class="img-responsive img-rounded img-circle"></li>
         </div>
       </ul>
     </nav>
   </div>
-  <div class="row">
-
+  <div class="row clearfix">
+    <div class="jumbotron">
+      <h1>{{Username}}博客</h1>
+      <p>
+        最新博文{{LatestText}}
+        更新时间{{LatestTime}}
+        <a href="#" class="btn-info">了解更多</a>
+        <img src="static/images/background.jpg" class="img-responsive img-rounded"/>
+      </p>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="col-md-6">
+      <h1>The First</h1>
+      <p>1111</p>
+    </div>
+    <div class="col-md-6">
+      <h1>The Second</h1>
+      <p>2222</p>
+    </div>
   </div>
 </div>
-<body>
-
 </body>
 </html>
