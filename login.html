@@ -4,58 +4,11 @@
     <meta charset="UTF-8">
     <title>Login</title>
 </head>
-<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-<script>
-  $(document).ready(function(){
-    $("#login_button").click(function(){
-      var $user_name=$("#UserName").val();
-      var $password=$("#Password").val();
-      if($user_name.length != 0 && $password.length !=0)
-      {
-        /*$.ajax({
-          url:"testpost.py",
-          type:"POST",
-          dataType:"json",
-          success:function (date) {
-            console.log(data)
-          }
-        })*/
-
-        $.ajax(
-          {
-            url:"testpost.py",
-            type:"POST",
-            UserName:$user_name,
-            Password:$password,
-            dataType:"JOSN",
-            async: true,
-            success:function (date) {
-              if(date.succ) {
-                var search_url =encodeURI("index.html?&"+date.name)
-                window.location.href = search_url;
-              }
-              else
-                $("#ErrorMessage").text("Something is wrong!");
-
-            }
-          }
-        )
-      }
-      else {
-        alert("Name or Password cann't be empty!")
-      }
-    });
-
-    $("#LookPassword").click(function () {
-      var $judge = $("#Password").attr("type");
-      if($judge == "text")
-        $("#Password").attr("type","password");
-      else
-        $("#Password").attr("type","text");
-    })
-  });
-
-</script>
+<link rel="stylesheet" href="static/css/bootstrap.css">
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="static/css/selfmd.css">
 <body>
 <div class="bgimage container col-conter">
   <h1 style="text-align: center">Login in</h1>
