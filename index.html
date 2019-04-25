@@ -19,22 +19,50 @@
       }
     })
   </script>
-<body>
-<div id="header">
-  <p>Blog</p>
-  <ul id="ul1">
-    <li><a href="login.html" title="if you have not had a account,you can not use it"><button>Login in</button></a></li>
-    <li><a href="register.html" title="click it and creat a new account"><button>Sign up</button></a></li>
-  </ul>
-</div>
-<div id="nav">
-  <ul>
-    <li>A</li>
-    <li>B</li>
-    <li>C</li>
-    <li>D</li>
-  </ul>
-</div>
-<div id="main"></div>
-</body>
-</html>
+  <body>
+  <div id="header" class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="navbar-header"><a class="navbar-brand" href="index">Blog</a></div>
+          <div>
+            <ul class="nav navbar-nav">
+              <li><a href="#">A</a></li>
+              <li><a href="#">B</a></li>
+              <li><a href="#">C</a></li>
+            </ul>
+            <form role="search" class="navbar-form navbar-left">
+              <div class="form-group">
+                <input type="text" class="form-control">
+                <input type="submit" class="form-control" value="Search">
+              </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="login" title="if you have not had a account,you can not use it"><button type="button" class="btn btn-default">Login in</button></a></li>
+              <li><a href="register" title="click it and creat a new account"><button type="button" class="btn btn-default">Sign up</button></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="jumbotron">
+        <h1>个人博客</h1>
+        <p>
+          更新时间2019年4月25日下午4点半
+        </p>
+        <a class="btn btn-primary btn-large" href="#">Learn more</a>
+        <img src="static/images/background.jpg" class="img-responsive img-rounded"/>
+      </div>
+    </div>
+    <div class="row clearfix">
+      <div class="col-md-6">
+        <h1>The First</h1>
+        <p>1111</p>
+      </div>
+      <div class="col-md-6">
+        <h1>The Second</h1>
+        <p>2222</p>
+      </div>
+    </div>
+  </div>
+  </body>
+  </html>
