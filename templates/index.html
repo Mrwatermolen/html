@@ -1,69 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>T</title>
-  <link rel="stylesheet" href="../static/css/bootstrap.css">
-  <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../static/css/selfmd.css">
-</head>
-  <script>
-    $(document).ready(function () {
-      var $search_url = window.location.href;
-      var $qs = $search_url.split("&");
-      if(qs){
-        $("#ul1").remove();
-        var $text = $(<p></p>).text($qs);
-        $(#header).append($text);
-      }
-    })
-  </script>
-  <body>
-  <div id="header" class="container">
-    <div class="row clearfix">
-      <div class="col-md-12 column">
-        <nav class="navbar navbar-default" role="navigation">
-          <div class="navbar-header"><a class="navbar-brand" href="index">Blog</a></div>
-          <div>
-            <ul class="nav navbar-nav">
-              <li><a href="#">A</a></li>
-              <li><a href="#">B</a></li>
-              <li><a href="#">C</a></li>
-            </ul>
-            <form role="search" class="navbar-form navbar-left">
-              <div class="form-group">
-                <input type="text" class="form-control">
-                <input type="submit" class="form-control" value="Search">
-              </div>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="login" title="if you have not had a account,you can not use it"><button type="button" class="btn btn-default">Login in</button></a></li>
-              <li><a href="register" title="click it and creat a new account"><button type="button" class="btn btn-default">Sign up</button></a></li>
-            </ul>
-          </div>
-        </nav>
+{% extends "base.html" %}
+
+{% if true %}
+  {% block IndexAdmin %}
+  <h1>登录后查看</h1>
+  <a class="btn btn-primary btn-large" href="#">Learn more</a>
+  {% endblock %}
+{% else %}
+  {% block LsAndUser %}
+      <div class="dropdown" style="float: right">
+        <img src="static/images/timg.jpg" class="img-responsive img-rounded img-circle">
+        <button type="button" class="btn dropdown-toggle" id="UserDropMenu" data-toggle="dropdown">Nmae<span class="glyphicon glyphicon-user caret"></span></button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="UserDropMenu">
+          <li role="presentation">
+            <a role="menuitem"  tabindex="-1" href="#">Nmae:{{Username}}</a>
+          </li>
+          <li role="presentation">
+            <a role="menuitem"  tabindex="-1" href="#">E-mail:{{Email}}</a>
+          </li>
+          <li role="presentation">
+            <a role="menuitem"  tabindex="-1" href="userhome">进入个人空间</a>
+          </li>
+        </ul>
       </div>
-      <div class="jumbotron">
-        <h1>个人博客</h1>
-        <p>
-          更新时间2019年4月25日下午4点半
-        </p>
-        <a class="btn btn-primary btn-large" href="#">Learn more</a>
-        <img src="../static/images/background.jpg" class="img-responsive img-rounded"/>
-      </div>
-    </div>
-    <div class="row clearfix">
-      <div class="col-md-6">
-        <h1>The First</h1>
-        <p>1111</p>
-      </div>
-      <div class="col-md-6">
-        <h1>The Second</h1>
-        <p>2222</p>
-      </div>
-    </div>
-  </div>
-  </body>
-  </html>
+  {% endblock %}
+{% endif %}

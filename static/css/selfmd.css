@@ -11,3 +11,8 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+.userbgimage{
+  background: url(../images/usb.jpg) no-repeat center fixed;
+  background-size: contain;
+}
