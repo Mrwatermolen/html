@@ -55,7 +55,11 @@
   </div>
     <div class="col-md-4" style="float: left">
       <label>{{Username}}</label>
-
+      {% if massgae == 0 %}
+        <input class="form-control" style="BACKGROUND-COLOR: transparent;"placeholder="编辑个性签名">
+      {% else %}
+        <input class="form-control" style="BACKGROUND-COLOR: transparent;"value={{massage}}>
+       {% endif %}
     </div>
    </div>
   </div>
