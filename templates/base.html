@@ -10,6 +10,57 @@
   <link rel="stylesheet" href="../static/css/selfmd.css">
 </head>
 <body>
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header"><a class="navbar-brand" href="index">Blog</a></div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="#">A</a></li>
+            <li><a href="#">B</a></li>
+            <li><a href="#">C</a></li>
+          </ul>
+          <form role="search" class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control">
+              <input type="submit" class="form-control" value="Search">
+            </div>
+          </form>
 
+          {% block LsAndUser %}
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="login" title="if you have not had a account,you can not use it"><button type="button" class="btn btn-default">Login in</button></a></li>
+            <li><a href="register" title="click it and creat a new account"><button type="button" class="btn btn-default">Sign up</button></a></li>
+          </ul>
+          {% endblock %}
+        </div>
+      </nav>
+    </div>
+    <div class="jumbotron">
+      {% block IndexAdmin %}
+      <h1>最新博客个人博客</h1>
+      <p>
+        {{LatestBlogMin}}
+      </p>
+      <p>
+        {{LatestBlogTime}}
+      </p>
+      <a class="btn btn-primary btn-large" href="#">Learn more</a>
+      {% endblock %}
+      <img src="../static/images/background.jpg" class="img-responsive img-rounded"/>
+    </div>
+  </div>
+  <div class="row clearfix">
+    <div class="col-md-6">
+      <h1>The First</h1>
+      <p>1111</p>
+    </div>
+    <div class="col-md-6">
+      <h1>The Second</h1>
+      <p>2222</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
