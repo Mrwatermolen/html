@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>更改密码</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/selfmd.css">
+  </head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 col-conter">
+      <h1>修改密码</h1>
+    </div>
+    <div class="col-md-4 col-conter">
+      <form role="form">
+        <div class="form-group">
+          <label>旧密码</label>
+          <input type="password" name="PastPassword" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>新密码</label>
+          <input type="password" name="NewPassword" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>确认新密码</label>
+          <input type="password" name="Password2" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="text" name="Email" class="form-control" placeholder="验证邮箱，系统会发送一封邮件确认修改密码生效" required>
+        </div>
+        <!--
+        <div class="form-group">
+          <label>验证码</label>
+          <input type="text" name="SecurityCode" class="form-control" placeholder="验证邮箱，系统会发送一封邮件确认修改密码生效" required>
+        </div>
+        !-->
+        <div class="form-group">
+          <input type="submit" class="form-control btn btn-primary">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
