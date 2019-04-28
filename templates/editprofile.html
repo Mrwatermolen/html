@@ -11,18 +11,23 @@
 </head>
 <body>
 <div class="container col-conter">
-  <form>
     <div class="row">
       <div class="col-xs-4 col-sm-4 col-md-4 col-conter">
         <h1>个人资料更改</h1>
         <form role="form" class="form-horizontal" method="post">
           <div class="form-group">
+            <label class="control-label">Username</label>
+            <input name="Username" type="text" class="form-control" value={{Username}} required>
+          </div>
+          <div class="form-group">
             <label class="control-label">别名</label>
-            <input name="NickName" type="text" class="form-control" value={{Emai}} required>
+            <input name="NickName" type="text" class="form-control" value={{NickName}} required>
           </div>
           <input type="submit" class="form-control" value="保存更改">
           <input type="submit" class="form-control" value="取消">
-  </form>
+        </form>
+      </div>
+    </div>
 </div>
 </body>
 </html>
