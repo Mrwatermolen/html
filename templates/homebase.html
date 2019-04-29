@@ -5,7 +5,8 @@
   <title>{% block title %}个人博客{% endblock %}</title><!--子类可以替换改标题-->
   <link rel="stylesheet" href="../static/css/bootstrap.css">
   <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
   <script src="../static/js/bootstrap.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../static/css/selfmd.css">
@@ -32,8 +33,7 @@
         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">Nmae<span class="glyphicon glyphicon-user caret"></span></button>
         <ul class="dropdown-menu" role="menu">
           <li role="presentation">
-              {% if NickName.
-            <a role="menuitem"  tabindex="-1" href="#">Nmae:{{Username}}</a>
+            <a role="menuitem"  tabindex="-1" href="#">Name:{{Username}}</a>
           </li>
           <li role="presentation">
             <a role="menuitem"  tabindex="-1" href="#">E-mail:{{Email}}</a>
@@ -56,11 +56,7 @@
   </div>
     <div class="col-md-4" style="float: left">
       <label>{{Username}}</label>
-      {% if {{Message}} == 0 %}
-        <input class="form-control" style="BACKGROUND-COLOR: transparent;"placeholder="编辑个性签名">
-      {% else %}
-        <input class="form-control" style="BACKGROUND-COLOR: transparent;"value={{massage}}>
-       {% endif %}
+        <input class="form-control" id="Message_t" style="BACKGROUND-COLOR: transparent;"value={{massage}}>
     </div>
    </div>
   </div>
